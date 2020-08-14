@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link href="favicon.ico" rel="shortcut icon">
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport">
 	<meta name="title" content="A fun little JS game">
 	<meta name="description" content="Hi all, this is a fun little game built with good old vanilla JS. I chose the Marvel's Avengers theme because I love it 3000.">
 	<title>Snake Game</title>
@@ -26,6 +27,13 @@
 <div class="container">
 	<div id="score">Score: 0</div>
 	<canvas id="gameCanvas" width="300" height="300"></canvas>
+	<div class="keys">
+		<button id="upKey">&#x2191;</button>
+		<br>
+		<button id="leftKey">&#x2190;</button>
+		<button id="downKey">&#x2193;</button>
+		<button id="rightKey">&#x2192;</button>
+	</div>
 </div>
 <div class="modal-overlay">
 	<div class="modal">

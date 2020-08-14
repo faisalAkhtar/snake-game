@@ -12,7 +12,7 @@
 			this.ctx = this.gameCanvas.getContext("2d"),
 			this.overlay = document.querySelector('.modal-overlay');
 			this.setup(),
-			document.addEventListener("keydown", (e) => { this.changeDirection(e.keyCode) })
+			this.keysSetup()
 		},
 		setup: function () {
 			this.foodX,
@@ -24,6 +24,35 @@
 			this.snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, {x: 120, y: 150}, {x: 110, y: 150} ],
 			this.main(),
 			this.createFood()
+		},
+		keysSetup: function () {
+			let _ = this;
+			document.addEventListener("keydown", (e) => { _.changeDirection(e.keyCode) })
+			document.getElementById('upKey').onclick = function(e) {
+				e.preventDefault()
+				_.changeDirection(38)
+			}
+			document.getElementById('leftKey').onclick = function(e) {
+				e.preventDefault()
+				_.changeDirection(37)
+			}
+			document.getElementById('downKey').onclick = function(e) {
+				e.preventDefault()
+				_.changeDirection(40)
+			}
+			document.getElementById('rightKey').onclick = function(e) {
+				e.preventDefault()
+				_.changeDirection(39)
+			}
+		},
+		fix_dpi: function () {
+			let dpi = window.devicePixelRatio;
+
+			let style_height = +getComputedStyle(this.gameCanvas).getPropertyValue("height").slice(0, -2);
+			let style_width = +getComputedStyle(this.gameCanvas).getPropertyValue("width").slice(0, -2);
+
+			this.gameCanvas.setAttribute('height', style_height * dpi);
+			this.gameCanvas.setAttribute('width', style_width * dpi);
 		},
 		main: function () {
 			if (this.didGameEnd()) {
@@ -153,5 +182,15 @@
 	document.querySelector(".restart").onclick = function(e) {
 		e.preventDefault()
 		Snake.restart()
+	}
+
+	if( window.innerHeight < 480 ) {
+		alert(`Current screen-height is not sufficient for the game play. It might affect your experience.\n\nMinimum screen-height recommended : 480px\nCurrent screen-height : ${window.innerHeight}px`)
+	}
+
+	window.onresize = function () {
+		if( window.innerHeight < 480 ) {
+			alert(`Current screen-height is not sufficient for the game play. It might affect your experience.\n\nMinimum screen-height recommended : 480px\nCurrent screen-height : ${window.innerHeight}px`)
+		}
 	}
 })();
