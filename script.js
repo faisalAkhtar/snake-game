@@ -1,7 +1,7 @@
 (function() {
 	var Snake = {
-		init: function () {
-			this.game_speed = 100,
+		init: function (speed) {
+			this.game_speed = speed,
 			this.canvas_border_colour = '#10151b77',
 			this.canvas_background_colour = "#f1f1f1",
 			this.snake_colour = 'lightgreen',
@@ -56,10 +56,10 @@
 		},
 		main: function () {
 			if (this.didGameEnd()) {
-				if(this.score < 100) {
+				if(this.score < 50) {
 					document.querySelector(".winner").innerHTML = "You suck!";
 					document.querySelector("#final_score").innerHTML = `${this.score} &#x1f480;`;
-				} else if(this.score >= 100 && this.score < 500) {
+				} else if(this.score >= 50 && this.score < 500) {
 					document.querySelector(".winner").innerHTML = "You rock!";
 					document.querySelector("#final_score").innerHTML = `${this.score} &#x1F38A;`;
 				} else {
@@ -175,7 +175,9 @@
 
 	document.querySelector(".start").onclick = function(e) {
 		e.preventDefault()
-		Snake.init()
+		let difficulty = document.querySelector('input[type="radio"]:checked').value;
+		difficulty = parseInt(difficulty)
+		Snake.init(difficulty)
 		this.parentElement.parentElement.remove()
 	}
 

@@ -60,6 +60,16 @@ body {
 	text-align: center;
 }
 
+.difficulty {
+	width: 100%;
+	display: table;
+}
+
+.difficulty .cont {
+	text-align: center;
+	display: table-cell;
+}
+
 .keys {
 	text-align: center;
 }
