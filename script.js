@@ -1,29 +1,30 @@
 (function() {
 	var Snake = {
 		init: function (speed) {
-			this.game_speed = speed,
-			this.canvas_border_colour = '#10151b77',
-			this.canvas_background_colour = "#f1f1f1",
-			this.snake_colour = 'lightgreen',
-			this.snake_border_colour = 'darkgreen',
-			this.food_colour = 'red',
-			this.food_border_colour = 'darkred',
-			this.gameCanvas = document.getElementById("gameCanvas"),
-			this.ctx = this.gameCanvas.getContext("2d"),
+			this.game_speed = speed;
+			this.canvas_border_colour = '#10151b77';
+			this.canvas_background_colour = "#f1f1f1";
+			this.snake_colour = 'lightgreen';
+			this.snake_border_colour = 'darkgreen';
+			this.food_colour = 'red';
+			this.food_border_colour = 'darkred';
+			this.gameCanvas = document.getElementById("gameCanvas");
+			this.ctx = this.gameCanvas.getContext("2d");
 			this.overlay = document.querySelector('.modal-overlay');
-			this.setup(),
-			this.keysSetup()
+			this.setup();
+			this.keysSetup();
 		},
 		setup: function () {
-			this.foodX,
-			this.foodY,
-			this.dx = 10,
-			this.dy = 0,
-			this.score = 0,
-			this.changingDirection = false,
-			this.snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, {x: 120, y: 150}, {x: 110, y: 150} ],
-			this.main(),
-			this.createFood()
+			this.foodX;
+			this.foodY;
+			this.dx = 10;
+			this.dy = 0;
+			this.score = 0;
+			this.changingDirection = false;
+			this.snake = [ {x: 150, y: 150}, {x: 140, y: 150}, {x: 130, y: 150}, {x: 120, y: 150}, {x: 110, y: 150} ];
+			document.getElementById('score').innerHTML = `Score: 0`;
+			this.main();
+			this.createFood();
 		},
 		keysSetup: function () {
 			let _ = this;
