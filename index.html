@@ -1,59 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta name="msapplication-TileColor" content="#10151b">
+	<meta name="theme-color" content="#10151b">
 	<link href="assets/favicon.ico" rel="shortcut icon">
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" name="viewport">
-	<meta name="title" content="A fun little JS game">
-	<meta name="description" content="Hi all, this is a fun little game built with good old vanilla JS. I chose the Marvel's Avengers theme because I love it 3000.">
+	<meta name="title" content="Snake Game built on canvas using JavaScript">
+	<meta name="description" content="A browser-friendly, small-sized, good old snake game built on canvas using JavaScript. Play using the arrow keys or the keys drawn on screen.">
+	<meta itemprop="name" content="Snake Game built on canvas using JavaScript">
+	<meta itemprop="description" content="A browser-friendly, small-sized, good old snake game built on canvas using JavaScript. Play using the arrow keys or the keys drawn on screen.">
+	<meta name="og:locale" content="en_US">
+	<meta name="og:type" content="website">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://faisalakhtar.github.io">
+	<meta property="og:site_name" content="Faisal's workshop">
+	<meta property="og:title" content="Snake Game built on canvas using JavaScript">
+	<meta property="og:description" content="A browser-friendly, small-sized, good old snake game built on canvas using JavaScript. Play using the arrow keys or the keys drawn on screen.">
+	<meta property="og:type" content="website">
+	<meta property="og:image" itemprop="image" content="https://faisalakhtar.github.io/snake-game/assets/preview-small.png">
+	<meta property="og:image:type" content="image/jpg">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:url" content="https://faisalakhtar.github.io">
+	<meta name="twitter:site_name" content="Faisal's workshop">
+	<meta name="twitter:title" content="Snake Game built on canvas using JavaScript">
+	<meta name="twitter:description" content="A browser-friendly, small-sized, good old snake game built on canvas using JavaScript. Play using the arrow keys or the keys drawn on screen.">
+	<meta name="twitter:type" content="website">
+	<meta name="twitter:image" itemprop="image" content="https://faisalakhtar.github.io/snake-game/assets/preview.png">
+	<meta name="twitter:image:alt" content="Snake Game built on canvas using JavaScript">
 	<title>Snake Game</title>
 	<link rel="stylesheet" type="text/css" href="assets/style.css">
 </head>
 
 <body>
-<div class="intro-modal-overlay">
-	<div class="intro-modal">
-		<h2>Welcome</h2>
-		<h2>Snake Game &#x1f40d;</h2>
-		<ul>
-			<li>Play using left, right, top, bottom keys</li>
-			<li>You can also play using the keys on screen</li>
-			<li>Score as much as you can</li>
-		</ul>
-		<p>Best of Luck &#x1f44d;</p>
-		<div class="difficulty">
-			<label class="cont">Easy
-				<input type="radio" name="difficulty" value="200">
-			</label>
-			<label class="cont">Medium
-				<input type="radio" name="difficulty" value="100" checked>
-			</label>
-			<label class="cont">Hard
-				<input type="radio" name="difficulty" value="50">
-			</label>
+	<div class="intro-modal-overlay">
+		<div class="intro-modal">
+			<h2>Welcome</h2>
+			<h2>Snake Game &#x1f40d;</h2>
+			<ul>
+				<li>Play using left, right, top, bottom keys</li>
+				<li>You can also play using the keys on screen</li>
+				<li>Score as much as you can</li>
+			</ul>
+			<p>Best of Luck &#x1f44d;</p>
+			<div class="difficulty">
+				<label class="cont">Easy
+					<input type="radio" name="difficulty" value="200">
+				</label>
+				<label class="cont">Medium
+					<input type="radio" name="difficulty" value="100" checked>
+				</label>
+				<label class="cont">Hard
+					<input type="radio" name="difficulty" value="50">
+				</label>
+			</div>
+			<button class="start">Start game</button>
 		</div>
-		<button class="start">Start game</button>
 	</div>
-</div>
-<div class="container">
-	<div id="score">Score: 0</div>
-	<canvas id="gameCanvas" width="300" height="300"></canvas>
-	<div class="keys">
-		<button id="upKey">&#x2191;</button>
-		<br>
-		<button id="leftKey">&#x2190;</button>
-		<button id="downKey">&#x2193;</button>
-		<button id="rightKey">&#x2192;</button>
+
+	<div class="container">
+		<div id="score">Score: 0</div>
+		<canvas id="gameCanvas" width="300" height="300"></canvas>
+		<div class="keys">
+			<button id="upKey">&#x2191;</button>
+			<br>
+			<button id="leftKey">&#x2190;</button>
+			<button id="downKey">&#x2193;</button>
+			<button id="rightKey">&#x2192;</button>
+		</div>
 	</div>
-</div>
-<div class="modal-overlay">
-	<div class="modal">
-		<h2 class="winner">You Rock!</h2>
-		<h2>Score : <span id="final_score"></span></h2>
-		<button class="restart">Play Again?</button>
-		<p>Made with &hearts; and JavaScript by <a href="https://faisalakhtar.github.io/">Faisal</a></p>
+
+	<div class="modal-overlay">
+		<div class="modal">
+			<h2 class="winner">You Rock!</h2>
+			<h2>Score : <span id="final_score"></span></h2>
+			<button class="restart">Play Again?</button>
+			<p>Made with &hearts; and JavaScript by <a href="https://faisalakhtar.github.io/">Faisal</a></p>
+		</div>
 	</div>
-</div>
-<script type="text/javascript" src="assets/script.js"></script>
+
+	<script type="text/javascript" src="assets/script.js"></script>
 </body>
+
 </html>
