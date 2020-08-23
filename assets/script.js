@@ -86,7 +86,7 @@
 		},
 		clearCanvas: function () {
 			this.ctx.fillStyle = this.canvas_background_colour;
-			this.ctx.strokestyle = this.canvas_border_colour;
+			this.ctx.strokeStyle = this.canvas_border_colour;
 
 			this.ctx.fillRect(0, 0, this.gameCanvas.width, this.gameCanvas.height);
 			this.ctx.strokeRect(0, 0, this.gameCanvas.width, this.gameCanvas.height);
@@ -98,7 +98,7 @@
 		},
 		drawSnakePart: function (snakePart) {
 			this.ctx.fillStyle = this.snake_colour;
-			this.ctx.strokestyle = this.snake_border_colour;
+			this.ctx.strokeStyle = this.snake_border_colour;
 
 			this.ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
 			this.ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
@@ -109,7 +109,13 @@
 
 			let didEatFood = this.snake[0].x === this.foodX && this.snake[0].y === this.foodY;
 			if (didEatFood) {
-				this.score += 10;
+				if(this.game_speed == 50) {
+					this.score += 25;
+				} else if(this.game_speed == 100) {
+					this.score += 20;
+				} else {
+					this.score += 10;
+				}
 				document.getElementById('score').innerHTML = `Score: ${this.score}`;
 				this.createFood();
 			} else {
@@ -149,7 +155,7 @@
 		},
 		drawFood: function () {
 			this.ctx.fillStyle = this.food_colour;
-			this.ctx.strokestyle = this.food_border_colour;
+			this.ctx.strokeStyle = this.food_border_colour;
 			this.ctx.fillRect(this.foodX, this.foodY, 10, 10);
 			this.ctx.strokeRect(this.foodX, this.foodY, 10, 10);
 		},
