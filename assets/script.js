@@ -136,10 +136,38 @@
 				goingRight = this.dx === 10,
 				goingLeft = this.dx === -10;
 
-			if (keyPressed === LEFT_KEY && !goingRight)	{ this.dx = -10; this.dy =   0; }
-			if (keyPressed === UP_KEY && !goingDown)	{ this.dx =   0; this.dy = -10; }
-			if (keyPressed === RIGHT_KEY && !goingLeft)	{ this.dx =  10; this.dy =   0; }
-			if (keyPressed === DOWN_KEY && !goingUp)	{ this.dx =   0; this.dy =  10; }
+			if (keyPressed === LEFT_KEY && !goingRight)	{
+				this.dx = -10;
+				this.dy =   0;
+				document.querySelector("#leftKey").classList.add("pressed");
+				setTimeout(function() {
+					document.querySelector("#leftKey").classList.remove("pressed");
+				}, 50);
+			}
+			if (keyPressed === UP_KEY && !goingDown)	{
+				this.dx =   0;
+				this.dy = -10;
+				document.querySelector("#upKey").classList.add("pressed");
+				setTimeout(function() {
+					document.querySelector("#upKey").classList.remove("pressed");
+				}, 50);
+			}
+			if (keyPressed === RIGHT_KEY && !goingLeft)	{
+				this.dx =  10;
+				this.dy =   0;
+				document.querySelector("#rightKey").classList.add("pressed");
+				setTimeout(function() {
+					document.querySelector("#rightKey").classList.remove("pressed");
+				}, 50);
+			}
+			if (keyPressed === DOWN_KEY && !goingUp)	{
+				this.dx =   0;
+				this.dy =  10;
+				document.querySelector("#downKey").classList.add("pressed");
+				setTimeout(function() {
+					document.querySelector("#downKey").classList.remove("pressed");
+				}, 50);
+			}
 		},
 		randomTen: function (min, max) {
 			return Math.round((Math.random() * (max-min) + min) / 10) * 10;
