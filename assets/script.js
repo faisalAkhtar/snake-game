@@ -204,7 +204,7 @@
 		},
 		restart: function () {
 			this.overlay.style.display = "none";
-			this.setup();
+			document.querySelector(".intro-modal-overlay").style.display = "block";
 		}
 	}
 
@@ -213,7 +213,7 @@
 		let difficulty = document.querySelector('input[type="radio"]:checked').value;
 		difficulty = parseInt(difficulty)
 		Snake.init(difficulty)
-		this.parentElement.parentElement.remove()
+		document.querySelector(".intro-modal-overlay").style.display = "none";
 	}
 
 	document.querySelector(".restart").onclick = function(e) {
